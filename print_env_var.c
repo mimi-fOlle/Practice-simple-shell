@@ -2,11 +2,13 @@
 
 int main(int argc, char *argv[], char *envp[])
 {
-	int i;
+	char **env = envp;
 
-	for (i = 0; envp[i]; i++)
+	while (*env != 0)
 	{
-		printf("%s\n", envp[i]);
+		char *addr = *env;
+		printf("%s\n", addr);
+		env++;
 	}
 	return (0);
 }

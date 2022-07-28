@@ -2,13 +2,13 @@
 
 extern char **environ;
 
-int main(int argc, char *argv[])
+int main(void)
 {
 	int i = 0;
 
-	while (environ[i])
+	while (environ[i] != NULL)
 	{
-		printf("%s\n", environ[i]);
+		printf("%p\n", environ[i]);
 		i++;
 	}
 	return (0);
