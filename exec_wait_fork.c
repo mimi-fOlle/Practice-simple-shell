@@ -4,7 +4,8 @@ int main(int argc, char **argv)
 {
 	pid_t parent;
 	pid_t child;
-	int status, i = 0;
+	int status;
+	int i = 0;
 	char *args[] = {"/bin/ls", "-l", "/tmp", 0};
 	char *env[] = {0};
 
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
 		if (child != 0)
 			wait(&status);
 
-		if (child == -1)
+		if (child == -1) //negative means fork fails
 		{
 			perror("Error:");
 			return (1);
