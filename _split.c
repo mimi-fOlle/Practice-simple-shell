@@ -13,11 +13,11 @@ char **split_str(char *str)
 
 	while (token != NULL)
 	{
-		array[i] = malloc(sizeof(char) * strlen(token));
 		array[i] = token;
 		token = strtok(NULL, " ");
 		i++;
 	}
+	array[i] = NULL;
 	return (array);
 }
 
