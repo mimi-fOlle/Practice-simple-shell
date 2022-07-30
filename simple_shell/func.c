@@ -15,7 +15,7 @@ char *readprompt(void)
 	nread = getline(&line, &len, stdin);
 	if (nread == -1)
 	{
-		//got problems here
+		//got EOF problems here
 		printf("Error ?");
 		return (line);
 	}
