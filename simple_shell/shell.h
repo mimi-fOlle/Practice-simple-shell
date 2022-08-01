@@ -1,6 +1,7 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef SIMPLE_SHELL_H
+#define SIMPLE_SHELL_H
 
+extern char **environ;
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -11,7 +12,12 @@
 #include <errno.h>
 #include <signal.h>
 
-char *readprompt(void);
+/*prototypes*/
+
+char *read_cmd(void);
+char **split_cmd(char *line);
 int exec_cmd(char **argv, char **args);
-char **format_cmd(char *line);
+int _printenv(void);
+
 #endif
+
