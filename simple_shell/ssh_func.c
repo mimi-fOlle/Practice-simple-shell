@@ -38,7 +38,7 @@ char **split_cmd(char *line)
 	char **cmd_args;
 	char *args;
 	int position = 0;
-	char *delim = "\n\t\r ";
+	char *delim = " \n\t\r"; /*space, newline, tab, carriage return*/
 
 	cmd_args = malloc(1024 * (sizeof(char *)));
 	if (!cmd_args)
