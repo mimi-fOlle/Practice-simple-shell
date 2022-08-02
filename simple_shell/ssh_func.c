@@ -89,7 +89,7 @@ int exec_cmd(char **argv, char **args)
 	if (stat(argv[0], &filestat) == 0)
 	{
 		pid = fork();
-		if (pid < 0)
+		if (pid == -1)
 		{
 			perror("Process creation error\n");
 		}
