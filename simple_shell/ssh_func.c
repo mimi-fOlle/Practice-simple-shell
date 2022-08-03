@@ -50,11 +50,11 @@ char **split_cmd(char *line)
 
 	while (args != NULL)
 	{
-		cmd_args[position] = args;
+		cmd_args[position] = strdup(args);
 		args = strtok(NULL, delim);
 		position++;
 	}
-	cmd_args[position] = NULL;
+	cmd_args[position] = args;
 	
 	if (!strcmp(cmd_args[0], "exit"))
 	{
